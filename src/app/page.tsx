@@ -86,7 +86,14 @@ function Site() {
   useEffect(() => {
     const timer = window.setTimeout(() => setLoaded(true), 350);
     if (reducedMotion) return () => window.clearTimeout(timer);
-    const lenis = new Lenis({ duration: 1.25, smoothWheel: true, touchMultiplier: 1.25, anchors: true });
+    const lenis = new Lenis({
+      duration: 1.8,
+      easing: (value) => Math.min(1, 1.001 - Math.pow(2, -10 * value)),
+      smoothWheel: true,
+      wheelMultiplier: 0.72,
+      touchMultiplier: 1.08,
+      anchors: true,
+    });
     let frame = 0;
     const raf = (time: number) => { lenis.raf(time); frame = requestAnimationFrame(raf); };
     frame = requestAnimationFrame(raf);

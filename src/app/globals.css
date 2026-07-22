@@ -1,6 +1,9 @@
 :root { --background: #f1e8df; --foreground: #211817; }
 * { box-sizing: border-box; padding: 0; margin: 0; }
 html { scroll-behavior: smooth; background: var(--background); }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: clip; }
 body { min-width: 320px; overflow-x: hidden; color: var(--foreground); background: var(--background); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
 a { color: inherit; text-decoration: none; }
 ::selection { color: #fff8f3; background: #bc252c; }
